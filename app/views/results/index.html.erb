@@ -15,12 +15,9 @@
   <tbody>
     <% @results.each do |result| %>
       <tr>
-        <td><%= result.month %></td>
-        <td><%= result.residents %></td>
-        <td><%= result.utilization %></td>
-        <td><%= link_to 'Show', result %></td>
-        <td><%= link_to 'Edit', edit_result_path(result) %></td>
-        <td><%= link_to 'Destroy', result, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= result[:month] %></td>
+        <td><%= result[:number_of_paying_residents] %></td>
+        <td><%= result[:utilization] %></td>
       </tr>
     <% end %>
   </tbody>

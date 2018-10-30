@@ -4,7 +4,12 @@ class ResultsController < ApplicationController
   # GET /results
   # GET /results.json
   def index
-    @results = Result.all
+    
+    # @results = Result.all
+    
+    @results = Result.arrange_by_month
+    
+    
   end
 
   # GET /results/1
