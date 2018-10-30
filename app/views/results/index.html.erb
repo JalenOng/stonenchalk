@@ -1,0 +1,30 @@
+<div class="center jumbotron">
+<p id="notice"><%= notice %></p>
+
+<h1>Results</h1>
+
+<table class="table table-striped table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Month</th>
+      <th>Residents</th>
+      <th>Utilization</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @results.each do |result| %>
+      <tr>
+        <td><%= result[:month] %></td>
+        <td><%= result[:number_of_paying_residents] %></td>
+        <td><%= ( result[:utilization] * 10).round / 10.0 %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+</div>
+
+
+
