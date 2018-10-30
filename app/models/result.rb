@@ -6,9 +6,7 @@ class Result < Airrecord::Table
   self.table_name = "KPIs"
 
   def self.arrange_by_month
-    
-    # all(sort: { "Created At": "asc" })
-    all(view: "test")
+    all(view: "default")
   end
 
 end
