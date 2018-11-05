@@ -5,8 +5,14 @@ class ResultsController < ApplicationController
   # GET /results
   # GET /results.json
   def index
-      
     @results = Result.arrange_by_month
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render template: "results/pdf.html.erb", pdf: 'Stats' + Time.now.strftime('%v %H:%M:%S').to_s, javascript_delay: 10000, disposition: 'attachment'
+      end
+    end
     
   end
 
