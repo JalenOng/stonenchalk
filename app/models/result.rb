@@ -9,4 +9,9 @@ class Result < Airrecord::Table
     all(view: "default")
   end
 
+  #Send KPI email update
+  def self.email_update 
+    UserMailer.reporting.deliver_now
+  end
+  
 end

@@ -10,12 +10,21 @@ class ResultsController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render template: "results/pdf.html.erb", pdf: 'Stats' + Time.now.strftime('%v %H:%M:%S').to_s, javascript_delay: 10000, disposition: 'attachment'
+        render template: "results/pdf.html.erb", pdf: 'KPI' + Time.now.strftime('%v %H:%M:%S').to_s, javascript_delay: 10000, disposition: 'attachment'
       end
     end
     
   end
 
+  def send_email
+    @results = Result.arrange_by_month
+
+    respond_to do |format|
+      format.pdf do
+        render template: "results/pdf.html.erb", pdf: 'KPI' + Time.now.strftime('%v %H:%M:%S').to_s, javascript_delay: 10000, disposition: 'attachment'
+      end
+    end
+  end
   # GET /results/1
   # GET /results/1.json
   def show
