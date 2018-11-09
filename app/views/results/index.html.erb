@@ -1,31 +1,199 @@
-<div class="center jumbotron">
 <p id="notice"><%= notice %></p>
 
 <h1>Stone And Chalk KPIs</h1>
 
-<table class="table table-striped table-hover">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Month</th>
-      <th>Residents</th>
-      <th>Utilization</th>
-    </tr>
-  </thead>
+<br>
+<h2>Occupancy Rates</h2>
 
-  <tbody>
-    <% @results.each do |result| %>
+<div class="table-responsive">
+  <table class="table table-hover" data-sort="table">
+    <thead>
       <tr>
-        <td><%= result[:month] %></td>
-        <td><%= result[:number_of_paying_residents] %></td>
-        <td><%= ( result[:utilization] * 10).round / 10.0 %></td>
+        <th>Month</th>
+        <th>Residents</th>
+        <th>Utilization</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @results.each do |result| %>
+        <tr>
+          <td><%= result[:month] %></td>
+          <td><%= result[:number_of_paying_residents] %></td>
+          <td><%= ( result[:utilization] * 10).round / 10.0 %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<div>
+
 <br>
 
+<h2>Project Outcome</h2>
 
+<div class="table-responsive">
+  <table class="table table-hover" data-sort="table">
+    <thead>
+      <tr>
+        <th>Outcome</th>
+        <th>Evidence</th>
+        <th>Date Achieved</th>
+        <th>Attachment</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @project_outcomes.each do |report| %>
+        <tr>
+          <td><%= report[:outcome] %></td>
+          <td><%= report[:evidence] %></td>
+          <td><%= report[:date_achieved] %></td>
+          <td><%= report[:attachments] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
+
+<br>
+
+<h2>KPIs</h2>
+
+<div class="table-responsive">
+  <table class="table table-hover" data-sort="table">
+    <thead>
+      <tr>
+        <th>Outcome</th>
+        <th>Evidence</th>
+        <th>Date Achieved</th>
+        <th>Attachment</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @kpis.each do |report| %>
+        <tr>
+          <td><%= report[:outcome] %></td>
+          <td><%= report[:evidence] %></td>
+          <td><%= report[:date_achieved] %></td>
+          <td><%= report[:attachments] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<br>
+
+<h2>Recipient Commitments</h2>
+
+<div class="table-responsive">
+  <table class="table table-hover" data-sort="table">
+    <thead>
+      <tr>
+        <th>Outcome</th>
+        <th>Evidence</th>
+        <th>Date Achieved</th>
+        <th>Attachment</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @recipient_commitments.each do |report| %>
+        <tr>
+          <td><%= report[:outcome] %></td>
+          <td><%= report[:evidence] %></td>
+          <td><%= report[:date_achieved] %></td>
+          <td><%= report[:attachments] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<br>
+
+<h2>Milestones 1</h2>
+
+<div class="table-responsive">
+  <table class="table table-hover" data-sort="table">
+    <thead>
+      <tr>
+        <th>Outcome</th>
+        <th>Evidence</th>
+        <th>Date Achieved</th>
+        <th>Attachment</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @milestones_1.each do |report| %>
+        <tr>
+          <td><%= report[:outcome] %></td>
+          <td><%= report[:evidence] %></td>
+          <td><%= report[:date_achieved] %></td>
+          <td><%= report[:attachments] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<br>
+
+<h2>Milestones 2</h2>
+
+<div class="table-responsive">
+  <table class="table table-hover" data-sort="table">
+    <thead>
+      <tr>
+        <th>Outcome</th>
+        <th>Evidence</th>
+        <th>Date Achieved</th>
+        <th>Attachment</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @milestones_2.each do |report| %>
+        <tr>
+          <td><%= report[:outcome] %></td>
+          <td><%= report[:evidence] %></td>
+          <td><%= report[:date_achieved] %></td>
+          <td><%= report[:attachments] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<br>
+
+<h2>Milestones 3</h2>
+
+<div class="table-responsive">
+  <table class="table table-hover" data-sort="table">
+    <thead>
+      <tr>
+        <th>Outcome</th>
+        <th>Evidence</th>
+        <th>Date Achieved</th>
+        <th>Attachment</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @milestones_3.each do |report| %>
+        <tr>
+          <td><%= report[:outcome] %></td>
+          <td><%= report[:evidence] %></td>
+          <td><%= report[:date_achieved] %></td>
+          <td><%= report[:attachments] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<br>
 
 
 <%= link_to 'Export to PDF', results_path(format: :pdf), target: '_blank' %>

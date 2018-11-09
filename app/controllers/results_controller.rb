@@ -6,7 +6,14 @@ class ResultsController < ApplicationController
   # GET /results.json
   def index
     @results = Result.arrange_by_month
+    @project_outcomes = Report.project_outcome
+    @kpis = Report.kpi
+    @recipient_commitments = Report.recipient_commitments
+    @milestones_1 = Report.milestone_1
+    @milestones_2 = Report.milestone_2
+    @milestones_3 = Report.milestone_3
 
+    
     respond_to do |format|
       format.html
       format.pdf do
