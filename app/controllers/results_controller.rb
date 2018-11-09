@@ -10,9 +10,9 @@ class ResultsController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        # render template: "results/pdf.html.erb", pdf: 'KPI' + Time.now.strftime('%v %H:%M:%S').to_s, javascript_delay: 10000, disposition: 'attachment'
-        pdf = render_to_string(template: 'results/results/pdf.html.erb', pdf: 'KPI' + Time.now.strftime('%v %H:%M:%S').to_s )
-        UserMailer.reporting(pdf).deliver_now
+        render template: "results/pdf.html.erb", pdf: 'KPI' + Time.now.strftime('%v %H:%M:%S').to_s, javascript_delay: 10000, disposition: 'attachment'
+        # pdf = render_to_string(template: 'results/results/pdf.html.erb', pdf: 'KPI' + Time.now.strftime('%v %H:%M:%S').to_s )
+        # UserMailer.reporting(pdf).deliver_now
       end
     end
     
