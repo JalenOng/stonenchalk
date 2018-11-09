@@ -1,0 +1,6 @@
+2018-11-05 16:30:11.929 AEDT [6003] LOG:  listening on IPv6 address "::1", port 5432
+2018-11-05 16:30:11.929 AEDT [6003] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-11-05 16:30:11.930 AEDT [6003] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2018-11-05 16:30:11.946 AEDT [6004] LOG:  database system was shut down at 2018-11-05 16:29:59 AEDT
+2018-11-05 16:30:11.952 AEDT [6003] LOG:  database system is ready to accept connections
+2018-11-05 16:30:43.932 AEDT [6023] FATAL:  database "stonenchalk_development" does not exist

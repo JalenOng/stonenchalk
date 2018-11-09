@@ -35,6 +35,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'airrecord'
 gem 'bootstrap'
 gem 'jquery-rails'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
+gem 'wkhtmltopdf-binary-edge'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -43,6 +47,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'dotenv-rails'
+  gem 'letter_opener'
 end
 
 group :development do
