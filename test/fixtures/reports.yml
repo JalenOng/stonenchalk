@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  outcome: MyText
+  evidence: MyString
+  date_achieved: 2018-11-09
+  attachments: MyString
+  category: MyString
+
+two:
+  outcome: MyText
+  evidence: MyString
+  date_achieved: 2018-11-09
+  attachments: MyString
+  category: MyString
