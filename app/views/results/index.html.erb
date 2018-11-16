@@ -38,27 +38,27 @@
 <div class="table-responsive">
   <table class="table table-hover" data-sort="table">
     <thead>
-      <tr class="d-flex">
-        <th class="col-5">Outcome</th>
-        <th class="col-1">Status</th>
-        <th class="col-4">Evidence</th>
-        <th class="col-1">Date Achieved</th>
-        <th class="col-1">Attachment</th>
+      <tr class>
+        <th>Outcome</th>
+        <th>Status</th>
+        <th>Evidence</th>
+        <th>Date Achieved</th>
+        <th>Attachment</th>
       </tr>
     </thead>
 
     <tbody>
       <% @project_outcomes.each do |report| %>
-        <tr class="d-flex">
-          <td class="col-5"><%= report[:outcome] %></td>
-          <td class="col-1 text-justify">
+        <tr class>
+          <td><%= report[:outcome] %></td>
+          <td>
             <%- if report[:status] %>
               <%= image_tag "ok.png", size: "30x30" %>
             <% end -%>
           </td>
-          <td class="col-4 text-justify"><%= report[:evidence] %></td>
-          <td class="col-1 text-justify"><%= report[:date_achieved] %></td>
-          <td class="col-1 text-justify"><%= report[:attachments] %></td>
+          <td><%= report[:evidence] %></td>
+          <td><%= report[:date_achieved].strftime("%m/%d/%Y") if report[:date_achieved] %></td>
+          <td><%= report[:attachments] %></td>
         </tr>
       <% end %>
     </tbody>

@@ -8,7 +8,6 @@ class ResultsController < ApplicationController
   def index
     @results = Result.arrange_by_month
     @project_outcomes = Report.project_outcome
-    byebug
     @kpis = Report.kpi
     @recipient_commitments = Report.recipient_commitments
     @milestones_1 = Report.milestone_1
