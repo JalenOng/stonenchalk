@@ -1,4 +1,5 @@
-<p id="notice"><%= notice %></p>
+<p>Welcome <%= current_user.username %></p>
+
 
 <h1>Stone And Chalk KPIs</h1>
 
@@ -35,11 +36,12 @@
 <h2>Project Outcome</h2>
 
 <div class="table-responsive">
-  <table class="table-bordered table-hover" data-sort="table">
+  <table class="table table-hover" data-sort="table">
     <thead>
       <tr class="d-flex">
         <th class="col-5">Outcome</th>
-        <th class="col-5">Evidence</th>
+        <th class="col-1">Status</th>
+        <th class="col-4">Evidence</th>
         <th class="col-1">Date Achieved</th>
         <th class="col-1">Attachment</th>
       </tr>
@@ -48,8 +50,13 @@
     <tbody>
       <% @project_outcomes.each do |report| %>
         <tr class="d-flex">
-          <td class="col-5 text-justify"><%= report[:outcome] %></td>
-          <td class="col-5 text-justify"><%= report[:evidence] %></td>
+          <td class="col-5"><%= report[:outcome] %></td>
+          <td class="col-1 text-justify">
+            <%- if report[:status] %>
+              <%= image_tag "ok.png", size: "30x30" %>
+            <% end -%>
+          </td>
+          <td class="col-4 text-justify"><%= report[:evidence] %></td>
           <td class="col-1 text-justify"><%= report[:date_achieved] %></td>
           <td class="col-1 text-justify"><%= report[:attachments] %></td>
         </tr>
