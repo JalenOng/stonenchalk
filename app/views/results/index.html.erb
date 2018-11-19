@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<p>Welcome <%= current_user.username %></p>
 
 <h1>Stone And Chalk KPIs</h1>
 
@@ -35,11 +35,12 @@
 <h2>Project Outcome</h2>
 
 <div class="table-responsive">
-  <table class="table-bordered table-hover" data-sort="table">
+  <table class="table table-hover" data-sort="table">
     <thead>
       <tr class="d-flex">
         <th class="col-5">Outcome</th>
-        <th class="col-5">Evidence</th>
+        <th class="col-1 text-center">Status</th>
+        <th class="col-4">Evidence</th>
         <th class="col-1">Date Achieved</th>
         <th class="col-1">Attachment</th>
       </tr>
@@ -48,10 +49,15 @@
     <tbody>
       <% @project_outcomes.each do |report| %>
         <tr class="d-flex">
-          <td class="col-5 text-justify"><%= report[:outcome] %></td>
-          <td class="col-5 text-justify"><%= report[:evidence] %></td>
-          <td class="col-1 text-justify"><%= report[:date_achieved] %></td>
-          <td class="col-1 text-justify"><%= report[:attachments] %></td>
+          <td class="col-5"><%= simple_format(report[:outcome]) %></td>
+          <td class="col-1 text-center">
+            <%- if report[:status] %>
+              <%= image_tag "ok.png", size: "30x30" %>
+            <% end -%>
+          </td>
+          <td class="col-4"><%= simple_format(report[:evidence]) %></td>
+          <td class="col-1"><%= report[:date_achieved].strftime("%m/%d/%Y") if report[:date_achieved] %></td>
+          <td class="col-1"><%= simple_format(report[:attachments]) %></td>
         </tr>
       <% end %>
     </tbody>
@@ -66,11 +72,12 @@
 <h2>KPIs</h2>
 
 <div class="table-responsive">
-  <table class="table-bordered table-hover" data-sort="table">
+  <table class="table table-hover" data-sort="table">
     <thead>
-      <tr class="d-flex justify-content-center">
+      <tr class="d-flex">
         <th class="col-5">Outcome</th>
-        <th class="col-5">Evidence</th>
+        <th class="col-1 text-center">Status</th>
+        <th class="col-4">Evidence</th>
         <th class="col-1">Date Achieved</th>
         <th class="col-1">Attachment</th>
       </tr>
@@ -79,10 +86,15 @@
     <tbody>
       <% @kpis.each do |report| %>
         <tr class="d-flex">
-          <td class="col-5 text-justify"><%= report[:outcome] %></td>
-          <td class="col-5 text-justify"><%= report[:evidence] %></td>
-          <td class="col-1 text-justify"><%= report[:date_achieved] %></td>
-          <td class="col-1 text-justify"><%= report[:attachments] %></td>
+          <td class="col-5"><%= simple_format(report[:outcome]) %></td>
+          <td class="col-1 text-center">
+            <%- if report[:status] %>
+              <%= image_tag "ok.png", size: "30x30" %>
+            <% end -%>
+          </td>
+          <td class="col-4"><%= simple_format(report[:evidence]) %></td>
+          <td class="col-1"><%= report[:date_achieved].strftime("%m/%d/%Y") if report[:date_achieved] %></td>
+          <td class="col-1"><%= simple_format(report[:attachments]) %></td>
         </tr>
       <% end %>
     </tbody>
@@ -97,11 +109,12 @@
 <h2>Recipient Commitments</h2>
 
 <div class="table-responsive">
-  <table class="table-bordered table-hover" data-sort="table">
+  <table class="table table-hover" data-sort="table">
     <thead>
       <tr class="d-flex">
         <th class="col-5">Outcome</th>
-        <th class="col-5">Evidence</th>
+        <th class="col-1 text-center">Status</th>
+        <th class="col-4">Evidence</th>
         <th class="col-1">Date Achieved</th>
         <th class="col-1">Attachment</th>
       </tr>
@@ -110,10 +123,15 @@
     <tbody>
       <% @recipient_commitments.each do |report| %>
         <tr class="d-flex">
-          <td class="col-5 text-justify"><%= report[:outcome] %></td>
-          <td class="col-5 text-justify"><%= report[:evidence] %></td>
-          <td class="col-1 text-justify"><%= report[:date_achieved] %></td>
-          <td class="col-1 text-justify"><%= report[:attachments] %></td>
+          <td class="col-5"><%= simple_format(report[:outcome]) %></td>
+          <td class="col-1 text-center">
+            <%- if report[:status] %>
+              <%= image_tag "ok.png", size: "30x30" %>
+            <% end -%>
+          </td>
+          <td class="col-4"><%= simple_format(report[:evidence]) %></td>
+          <td class="col-1"><%= report[:date_achieved].strftime("%m/%d/%Y") if report[:date_achieved] %></td>
+          <td class="col-1"><%= simple_format(report[:attachments]) %></td>
         </tr>
       <% end %>
     </tbody>
@@ -127,11 +145,12 @@
 <h2>Milestones 1 - Due by 31st July 2018</h2>
 
 <div class="table-responsive">
-  <table class="table-bordered table-hover" data-sort="table">
+  <table class="table table-hover" data-sort="table">
     <thead>
       <tr class="d-flex">
         <th class="col-5">Outcome</th>
-        <th class="col-5">Evidence</th>
+        <th class="col-1 text-center">Status</th>
+        <th class="col-4">Evidence</th>
         <th class="col-1">Date Achieved</th>
         <th class="col-1">Attachment</th>
       </tr>
@@ -140,10 +159,15 @@
     <tbody>
       <% @milestones_1.each do |report| %>
         <tr class="d-flex">
-          <td class="col-5 text-justify"><%= report[:outcome] %></td>
-          <td class="col-5 text-justify"><%= report[:evidence] %></td>
-          <td class="col-1 text-justify"><%= report[:date_achieved] %></td>
-          <td class="col-1 text-justify"><%= report[:attachments] %></td>
+          <td class="col-5"><%= simple_format(report[:outcome]) %></td>
+          <td class="col-1 text-center">
+            <%- if report[:status] %>
+              <%= image_tag "ok.png", size: "30x30" %>
+            <% end -%>
+          </td>
+          <td class="col-4"><%= simple_format(report[:evidence]) %></td>
+          <td class="col-1"><%= report[:date_achieved].strftime("%m/%d/%Y") if report[:date_achieved] %></td>
+          <td class="col-1"><%= simple_format(report[:attachments]) %></td>
         </tr>
       <% end %>
     </tbody>
@@ -158,11 +182,12 @@
 <h2>Milestones 2 - Due by 31st July 2018</h2>
 
 <div class="table-responsive">
-  <table class="table-bordered table-hover" data-sort="table">
+  <table class="table table-hover" data-sort="table">
     <thead>
       <tr class="d-flex">
         <th class="col-5">Outcome</th>
-        <th class="col-5">Evidence</th>
+        <th class="col-1 text-center">Status</th>
+        <th class="col-4">Evidence</th>
         <th class="col-1">Date Achieved</th>
         <th class="col-1">Attachment</th>
       </tr>
@@ -171,10 +196,15 @@
     <tbody>
       <% @milestones_2.each do |report| %>
         <tr class="d-flex">
-          <td class="col-5 text-justify"><%= report[:outcome] %></td>
-          <td class="col-5 text-justify"><%= report[:evidence] %></td>
-          <td class="col-1 text-justify"><%= report[:date_achieved] %></td>
-          <td class="col-1 text-justify"><%= report[:attachments] %></td>
+          <td class="col-5"><%= simple_format(report[:outcome]) %></td>
+          <td class="col-1 text-center">
+            <%- if report[:status] %>
+              <%= image_tag "ok.png", size: "30x30" %>
+            <% end -%>
+          </td>
+          <td class="col-4"><%= simple_format(report[:evidence]) %></td>
+          <td class="col-1"><%= report[:date_achieved].strftime("%m/%d/%Y") if report[:date_achieved] %></td>
+          <td class="col-1"><%= simple_format(report[:attachments]) %></td>
         </tr>
       <% end %>
     </tbody>
@@ -189,11 +219,12 @@
 <h2>Milestones 3 - Due by 31st July 2018</h2>
 
 <div class="table-responsive">
-  <table class="table-bordered table-hover" data-sort="table">
+  <table class="table table-hover" data-sort="table">
     <thead>
       <tr class="d-flex">
         <th class="col-5">Outcome</th>
-        <th class="col-5">Evidence</th>
+        <th class="col-1 text-center">Status</th>
+        <th class="col-4">Evidence</th>
         <th class="col-1">Date Achieved</th>
         <th class="col-1">Attachment</th>
       </tr>
@@ -202,10 +233,15 @@
     <tbody>
       <% @milestones_3.each do |report| %>
         <tr class="d-flex">
-          <td class="col-5 text-justify"><%= report[:outcome] %></td>
-          <td class="col-5 text-justify"><%= report[:evidence] %></td>
-          <td class="col-1 text-justify"><%= report[:date_achieved] %></td>
-          <td class="col-1 text-justify"><%= report[:attachments] %></td>
+          <td class="col-5"><%= simple_format(report[:outcome]) %></td>
+          <td class="col-1 text-center">
+            <%- if report[:status] %>
+              <%= image_tag "ok.png", size: "30x30" %>
+            <% end -%>
+          </td>
+          <td class="col-4"><%= simple_format(report[:evidence]) %></td>
+          <td class="col-1"><%= report[:date_achieved].strftime("%m/%d/%Y") if report[:date_achieved] %></td>
+          <td class="col-1"><%= simple_format(report[:attachments]) %></td>
         </tr>
       <% end %>
     </tbody>
@@ -218,5 +254,5 @@
 
 
 
-<%= link_to 'Export to PDF', results_path(format: :pdf), target: '_blank' %>
+
 
