@@ -14,7 +14,8 @@ class ResultsController < ApplicationController
     @milestones_2 = Report.milestone_2
     @milestones_3 = Report.milestone_3
 
-    
+    byebug
+
     respond_to do |format|
       format.html
       format.pdf do
@@ -42,7 +43,7 @@ class ResultsController < ApplicationController
 
   # GET /results/new
   def new
-    @result = Result.new
+    @result = Result.new(month: Date.today.strftime("%B"), number_of_paying_residents: 233)
   end
 
   # GET /results/1/edit

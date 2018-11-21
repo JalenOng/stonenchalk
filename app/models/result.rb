@@ -12,5 +12,4 @@ class Result < Airrecord::Table
   def self.email_update 
     UserMailer.reporting.deliver_now
   end
-  
 end
