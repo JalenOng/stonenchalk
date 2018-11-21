@@ -52,17 +52,22 @@ class ResultsController < ApplicationController
   # POST /results
   # POST /results.json
   def create
-    @result = Result.new(result_params)
+    total_companies = Company.total
+    byebug
+    result = Result.new(month: Date.today.strftime("%B"), number_of_paying_residents: total_companies)
+    result.save
+    redirect_to root_url
+    # @result = Result.new(result_params)
 
-    respond_to do |format|
-      if @result.save
-        format.html { redirect_to @result, notice: 'Result was successfully created.' }
-        format.json { render :show, status: :created, location: @result }
-      else
-        format.html { render :new }
-        format.json { render json: @result.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @result.save
+    #     format.html { redirect_to @result, notice: 'Result was successfully created.' }
+    #     format.json { render :show, status: :created, location: @result }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @result.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /results/1

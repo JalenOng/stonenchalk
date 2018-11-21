@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   
   root 'results#index'
 
+  resources :companies, only: ["index"]
+
 end
