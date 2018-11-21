@@ -5,6 +5,83 @@
 <br>
 <br>
 
+<div class="hr-divider mt-3 mb-5">
+  <h3 class="hr-divider-content hr-divider-heading">Quick stats</h3>
+</div>
+
+<div class="row statcards">
+  <div class="col-md-6 col-lg-3 mb-5 mb-md-3">
+    <div class="statcard">
+      <div class="p-a">
+        <span class="statcard-desc">Occupancy</span>
+        <h2 class="statcard-number">
+          154
+          <small class="badge badge-success">5%</small>
+        </h2>
+      </div>
+      <canvas id="sparkline1" width="378" height="94" class="sparkline"
+      data-chart="spark-line"
+      data-dataset="[[28,68,41,43,96,45,100]]"
+      data-dataset-options="[{borderColor: '#1ca8dd', backgroundColor:'rgba(66,165,245,.2)'}]"
+      data-labels="['a','b','c','d','e','f','g']"
+      style="width: 189px; height: 47px;"></canvas>
+    </div>
+  </div>
+  <div class="col-md-6 col-lg-3 mb-5 mb-md-3">
+    <div class="statcard">
+      <div class="p-a">
+        <span class="statcard-desc">Events Run</span>
+        <h2 class="statcard-number">
+          758
+          <small class="badge badge-danger">1.3%</small>
+        </h2>
+      </div>
+      <canvas id="sparkline1" width="378" height="94" class="sparkline"
+      data-chart="spark-line"
+      data-dataset="[[4,34,64,27,96,50,80]]"
+      data-dataset-options="[{borderColor: '#1ca8dd', backgroundColor:'rgba(66,165,245,.2)'}]"
+      data-labels="['a','b','c','d','e','f','g']"
+      style="width: 189px; height: 47px;"></canvas>
+    </div>
+  </div>
+  <div class="col-md-6 col-lg-3 mb-5 mb-md-3">
+    <div class="statcard">
+      <div class="p-a">
+        <span class="statcard-desc">Jobs Created</span>
+        <h2 class="statcard-number">
+          1,293
+          <small class="badge badge-success">6.75%</small>
+        </h2>
+      </div>
+      <canvas id="sparkline1" width="378" height="94" class="sparkline"
+         data-chart="spark-line"
+         data-dataset="[[12,38,32,60,36,54,68]]"
+         data-dataset-options="[{borderColor: '#1ca8dd', backgroundColor:'rgba(66,165,245,.2)'}]"
+         data-labels="['a','b','c','d','e','f','g']"
+         style="width: 189px; height: 47px;"></canvas>
+    </div>
+  </div>
+  <div class="col-md-6 col-lg-3 mb-5 mb-md-3">
+    <div class="statcard">
+      <div class="p-a">
+        <span class="statcard-desc">Amount Raised</span>
+        <h2 class="statcard-number">
+          $7.5 million
+          <small class="badge badge-success">1.3%</small>
+        </h2>
+      </div>
+      <canvas id="sparkline1" width="378" height="94" class="sparkline"
+        data-chart="spark-line"
+        data-dataset="[[43,48,52,58,50,95,100]]"
+        data-dataset-options="[{borderColor: '#1ca8dd', backgroundColor:'rgba(66,165,245,.2)'}]"
+        data-labels="['a','b','c','d','e','f','g']"
+        style="width: 189px; height: 47px;"></canvas>
+    </div>
+  </div>
+</div>
+
+
+
 <h2>Occupancy Rates</h2>
 
 <div class="table-responsive">
@@ -252,7 +329,7 @@
 <br>
 <br>
 
-<%= link_to 'Export to PDF', results_path(format: :pdf), target: '_blank' %>
+
 
 
 
