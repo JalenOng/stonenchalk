@@ -93,9 +93,9 @@
     <tbody>
       <% @results.each do |result| %>
         <tr>
-          <td><%= result[:month] %></td>
-          <td><%= result[:number_of_paying_residents] %></td>
-          <td><%= ( result[:utilization] * 10).round / 10.0 %>%</td>
+          <td><%= result['Month'] %></td>
+          <td><%= result['Number of Paying Residents'] %></td>
+          <td><%= ( result['Utilization'] * 10).round / 10.0 %>%</td>
         </tr>
       <% end %>
     </tbody>
@@ -122,15 +122,15 @@
     <tbody>
       <% @project_outcomes.each do |report| %>
         <tr class="d-flex">
-          <td class="col-5"><%= simple_format(report[:outcome]) %></td>
+          <td class="col-5"><%= simple_format(report['Outcome']) %></td>
           <td class="col-1 text-center">
-            <%- if report[:status] %>
+            <%- if report['Status'] %>
               <%= image_tag "ok.png", size: "30x30" %>
             <% end -%>
           </td>
-          <td class="col-4"><%= simple_format(report[:evidence]) %></td>
-          <td class="col-1"><%= report[:date_achieved].strftime("%m/%d/%Y") if report[:date_achieved] %></td>
-          <td class="col-1"><%= simple_format(report[:attachments]) %></td>
+          <td class="col-4"><%= simple_format(report['Evidence']) %></td>
+          <td class="col-1"><%= report['Date Achieved'].to_date.strftime("%m/%d/%Y") if report['Date Achieved'] %></td>
+          <td class="col-1"><%= simple_format(report['Attachments']) %></td>
         </tr>
       <% end %>
     </tbody>
@@ -159,15 +159,15 @@
     <tbody>
       <% @kpis.each do |report| %>
         <tr class="d-flex">
-          <td class="col-5"><%= simple_format(report[:outcome]) %></td>
+          <td class="col-5"><%= simple_format(report['Outcome']) %></td>
           <td class="col-1 text-center">
-            <%- if report[:status] %>
+            <%- if report['Status'] %>
               <%= image_tag "ok.png", size: "30x30" %>
             <% end -%>
           </td>
-          <td class="col-4"><%= simple_format(report[:evidence]) %></td>
-          <td class="col-1"><%= report[:date_achieved].strftime("%m/%d/%Y") if report[:date_achieved] %></td>
-          <td class="col-1"><%= simple_format(report[:attachments]) %></td>
+          <td class="col-4"><%= simple_format(report['Evidence']) %></td>
+          <td class="col-1"><%= report['Date Achieved'].to_date.strftime("%m/%d/%Y") if report['Date Achieved'] %></td>
+          <td class="col-1"><%= simple_format(report['Attachments']) %></td>
         </tr>
       <% end %>
     </tbody>
@@ -196,15 +196,15 @@
     <tbody>
       <% @recipient_commitments.each do |report| %>
         <tr class="d-flex">
-          <td class="col-5"><%= simple_format(report[:outcome]) %></td>
+          <td class="col-5"><%= simple_format(report['Outcome']) %></td>
           <td class="col-1 text-center">
-            <%- if report[:status] %>
+            <%- if report['Status'] %>
               <%= image_tag "ok.png", size: "30x30" %>
             <% end -%>
           </td>
-          <td class="col-4"><%= simple_format(report[:evidence]) %></td>
-          <td class="col-1"><%= report[:date_achieved].strftime("%m/%d/%Y") if report[:date_achieved] %></td>
-          <td class="col-1"><%= simple_format(report[:attachments]) %></td>
+          <td class="col-4"><%= simple_format(report['Evidence']) %></td>
+          <td class="col-1"><%= report['Date Achieved'].to_date.strftime("%m/%d/%Y") if report['Date Achieved'] %></td>
+          <td class="col-1"><%= simple_format(report['Attachments']) %></td>
         </tr>
       <% end %>
     </tbody>
@@ -232,15 +232,15 @@
     <tbody>
       <% @milestones_1.each do |report| %>
         <tr class="d-flex">
-          <td class="col-5"><%= simple_format(report[:outcome]) %></td>
+          <td class="col-5"><%= simple_format(report['Outcome']) %></td>
           <td class="col-1 text-center">
-            <%- if report[:status] %>
+            <%- if report['Status'] %>
               <%= image_tag "ok.png", size: "30x30" %>
             <% end -%>
           </td>
-          <td class="col-4"><%= simple_format(report[:evidence]) %></td>
-          <td class="col-1"><%= report[:date_achieved].strftime("%m/%d/%Y") if report[:date_achieved] %></td>
-          <td class="col-1"><%= simple_format(report[:attachments]) %></td>
+          <td class="col-4"><%= simple_format(report['Evidence']) %></td>
+          <td class="col-1"><%= report['Date Achieved'].to_date.strftime("%m/%d/%Y") if report['Date Achieved'] %></td>
+          <td class="col-1"><%= simple_format(report['Attachments']) %></td>
         </tr>
       <% end %>
     </tbody>
@@ -269,15 +269,15 @@
     <tbody>
       <% @milestones_2.each do |report| %>
         <tr class="d-flex">
-          <td class="col-5"><%= simple_format(report[:outcome]) %></td>
+          <td class="col-5"><%= simple_format(report['Outcome']) %></td>
           <td class="col-1 text-center">
-            <%- if report[:status] %>
+            <%- if report['Status'] %>
               <%= image_tag "ok.png", size: "30x30" %>
             <% end -%>
           </td>
-          <td class="col-4"><%= simple_format(report[:evidence]) %></td>
-          <td class="col-1"><%= report[:date_achieved].strftime("%m/%d/%Y") if report[:date_achieved] %></td>
-          <td class="col-1"><%= simple_format(report[:attachments]) %></td>
+          <td class="col-4"><%= simple_format(report['Evidence']) %></td>
+          <td class="col-1"><%= report['Date Achieved'].to_date.strftime("%m/%d/%Y") if report['Date Achieved'] %></td>
+          <td class="col-1"><%= simple_format(report['Attachments']) %></td>
         </tr>
       <% end %>
     </tbody>
@@ -306,15 +306,15 @@
     <tbody>
       <% @milestones_3.each do |report| %>
         <tr class="d-flex">
-          <td class="col-5"><%= simple_format(report[:outcome]) %></td>
+          <td class="col-5"><%= simple_format(report['Outcome']) %></td>
           <td class="col-1 text-center">
-            <%- if report[:status] %>
+            <%- if report['Status'] %>
               <%= image_tag "ok.png", size: "30x30" %>
             <% end -%>
           </td>
-          <td class="col-4"><%= simple_format(report[:evidence]) %></td>
-          <td class="col-1"><%= report[:date_achieved].strftime("%m/%d/%Y") if report[:date_achieved] %></td>
-          <td class="col-1"><%= simple_format(report[:attachments]) %></td>
+          <td class="col-4"><%= simple_format(report['Evidence']) %></td>
+          <td class="col-1"><%= report['Date Achieved'].to_date.strftime("%m/%d/%Y") if report['Date Achieved'] %></td>
+          <td class="col-1"><%= simple_format(report['Attachments']) %></td>
         </tr>
       <% end %>
     </tbody>

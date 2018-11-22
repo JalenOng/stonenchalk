@@ -13,9 +13,6 @@ class ResultsController < ApplicationController
     @milestones_1 = Report.milestone_1
     @milestones_2 = Report.milestone_2
     @milestones_3 = Report.milestone_3
-
-    byebug
-
     respond_to do |format|
       format.html
       format.pdf do
@@ -54,8 +51,7 @@ class ResultsController < ApplicationController
   # POST /results.json
   def create
     total_companies = Company.total
-    byebug
-    result = Result.new(month: Date.today.strftime("%B"), number_of_paying_residents: total_companies)
+    result = Result.new(month: Date.today.strftime("%B %Y"), number_of_paying_residents: total_companies)
     result.save
     redirect_to root_url
     # @result = Result.new(result_params)
