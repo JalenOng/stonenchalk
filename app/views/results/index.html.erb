@@ -1,9 +1,82 @@
 <p>Welcome <%= current_user.username %></p>
 
-<h1>Stone And Chalk KPIs</h1>
+<h1>Stone & Chalk GSN Victorian Government Reporting</h1>
 
 <br>
 <br>
+
+<div class="hr-divider mt-3 mb-5">
+  <h3 class="hr-divider-content hr-divider-heading">Quick stats</h3>
+</div>
+
+<div class="row statcards">
+  <div class="col-md-6 col-lg-3 mb-5 mb-md-3">
+    <div class="statcard">
+      <div class="p-a">
+        <span class="statcard-desc">Occupancy</span>
+        <h2 class="statcard-number">
+          154
+        </h2>
+      </div>
+      <canvas id="sparkline1" width="378" height="94" class="sparkline"
+      data-chart="spark-line"
+      data-dataset="[[28,68,41,43,96,45,100]]"
+      data-dataset-options="[{borderColor: '#1ca8dd', backgroundColor:'rgba(66,165,245,.2)'}]"
+      data-labels="['a','b','c','d','e','f','g']"
+      style="width: 189px; height: 47px;"></canvas>
+    </div>
+  </div>
+  <div class="col-md-6 col-lg-3 mb-5 mb-md-3">
+    <div class="statcard">
+      <div class="p-a">
+        <span class="statcard-desc">Events Run</span>
+        <h2 class="statcard-number">
+          758
+        </h2>
+      </div>
+      <canvas id="sparkline1" width="378" height="94" class="sparkline"
+      data-chart="spark-line"
+      data-dataset="[[4,34,64,27,96,50,80]]"
+      data-dataset-options="[{borderColor: '#1ca8dd', backgroundColor:'rgba(66,165,245,.2)'}]"
+      data-labels="['a','b','c','d','e','f','g']"
+      style="width: 189px; height: 47px;"></canvas>
+    </div>
+  </div>
+  <div class="col-md-6 col-lg-3 mb-5 mb-md-3">
+    <div class="statcard">
+      <div class="p-a">
+        <span class="statcard-desc">Jobs Created</span>
+        <h2 class="statcard-number">
+          1,293
+        </h2>
+      </div>
+      <canvas id="sparkline1" width="378" height="94" class="sparkline"
+         data-chart="spark-line"
+         data-dataset="[[12,38,32,60,36,54,68]]"
+         data-dataset-options="[{borderColor: '#1ca8dd', backgroundColor:'rgba(66,165,245,.2)'}]"
+         data-labels="['a','b','c','d','e','f','g']"
+         style="width: 189px; height: 47px;"></canvas>
+    </div>
+  </div>
+  <div class="col-md-6 col-lg-3 mb-5 mb-md-3">
+    <div class="statcard">
+      <div class="p-a">
+        <span class="statcard-desc">Amount Raised</span>
+        <h2 class="statcard-number">
+          $7.5 million
+        </h2>
+      </div>
+      <canvas id="sparkline1" width="378" height="94" class="sparkline"
+        data-chart="spark-line"
+        data-dataset="[[43,48,52,58,50,95,100]]"
+        data-dataset-options="[{borderColor: '#1ca8dd', backgroundColor:'rgba(66,165,245,.2)'}]"
+        data-labels="['a','b','c','d','e','f','g']"
+        style="width: 189px; height: 47px;"></canvas>
+    </div>
+  </div>
+</div>
+
+
 
 <h2>Occupancy Rates</h2>
 
@@ -20,9 +93,9 @@
     <tbody>
       <% @results.each do |result| %>
         <tr>
-          <td><%= result[:month] %></td>
-          <td><%= result[:number_of_paying_residents] %></td>
-          <td><%= ( result[:utilization] * 10).round / 10.0 %></td>
+          <td><%= result['Month'] %></td>
+          <td><%= result['Number of Paying Residents'] %></td>
+          <td><%= ( result['Utilization'] * 10).round / 10.0 %>%</td>
         </tr>
       <% end %>
     </tbody>
@@ -49,15 +122,15 @@
     <tbody>
       <% @project_outcomes.each do |report| %>
         <tr class="d-flex">
-          <td class="col-5"><%= simple_format(report[:outcome]) %></td>
+          <td class="col-5"><%= simple_format(report['Outcome']) %></td>
           <td class="col-1 text-center">
-            <%- if report[:status] %>
+            <%- if report['Status'] %>
               <%= image_tag "ok.png", size: "30x30" %>
             <% end -%>
           </td>
-          <td class="col-4"><%= simple_format(report[:evidence]) %></td>
-          <td class="col-1"><%= report[:date_achieved].strftime("%m/%d/%Y") if report[:date_achieved] %></td>
-          <td class="col-1"><%= simple_format(report[:attachments]) %></td>
+          <td class="col-4"><%= simple_format(report['Evidence']) %></td>
+          <td class="col-1"><%= report['Date Achieved'].to_date.strftime("%m/%d/%Y") if report['Date Achieved'] %></td>
+          <td class="col-1"><%= simple_format(report['Attachments']) %></td>
         </tr>
       <% end %>
     </tbody>
@@ -86,15 +159,15 @@
     <tbody>
       <% @kpis.each do |report| %>
         <tr class="d-flex">
-          <td class="col-5"><%= simple_format(report[:outcome]) %></td>
+          <td class="col-5"><%= simple_format(report['Outcome']) %></td>
           <td class="col-1 text-center">
-            <%- if report[:status] %>
+            <%- if report['Status'] %>
               <%= image_tag "ok.png", size: "30x30" %>
             <% end -%>
           </td>
-          <td class="col-4"><%= simple_format(report[:evidence]) %></td>
-          <td class="col-1"><%= report[:date_achieved].strftime("%m/%d/%Y") if report[:date_achieved] %></td>
-          <td class="col-1"><%= simple_format(report[:attachments]) %></td>
+          <td class="col-4"><%= simple_format(report['Evidence']) %></td>
+          <td class="col-1"><%= report['Date Achieved'].to_date.strftime("%m/%d/%Y") if report['Date Achieved'] %></td>
+          <td class="col-1"><%= simple_format(report['Attachments']) %></td>
         </tr>
       <% end %>
     </tbody>
@@ -123,15 +196,15 @@
     <tbody>
       <% @recipient_commitments.each do |report| %>
         <tr class="d-flex">
-          <td class="col-5"><%= simple_format(report[:outcome]) %></td>
+          <td class="col-5"><%= simple_format(report['Outcome']) %></td>
           <td class="col-1 text-center">
-            <%- if report[:status] %>
+            <%- if report['Status'] %>
               <%= image_tag "ok.png", size: "30x30" %>
             <% end -%>
           </td>
-          <td class="col-4"><%= simple_format(report[:evidence]) %></td>
-          <td class="col-1"><%= report[:date_achieved].strftime("%m/%d/%Y") if report[:date_achieved] %></td>
-          <td class="col-1"><%= simple_format(report[:attachments]) %></td>
+          <td class="col-4"><%= simple_format(report['Evidence']) %></td>
+          <td class="col-1"><%= report['Date Achieved'].to_date.strftime("%m/%d/%Y") if report['Date Achieved'] %></td>
+          <td class="col-1"><%= simple_format(report['Attachments']) %></td>
         </tr>
       <% end %>
     </tbody>
@@ -159,15 +232,15 @@
     <tbody>
       <% @milestones_1.each do |report| %>
         <tr class="d-flex">
-          <td class="col-5"><%= simple_format(report[:outcome]) %></td>
+          <td class="col-5"><%= simple_format(report['Outcome']) %></td>
           <td class="col-1 text-center">
-            <%- if report[:status] %>
+            <%- if report['Status'] %>
               <%= image_tag "ok.png", size: "30x30" %>
             <% end -%>
           </td>
-          <td class="col-4"><%= simple_format(report[:evidence]) %></td>
-          <td class="col-1"><%= report[:date_achieved].strftime("%m/%d/%Y") if report[:date_achieved] %></td>
-          <td class="col-1"><%= simple_format(report[:attachments]) %></td>
+          <td class="col-4"><%= simple_format(report['Evidence']) %></td>
+          <td class="col-1"><%= report['Date Achieved'].to_date.strftime("%m/%d/%Y") if report['Date Achieved'] %></td>
+          <td class="col-1"><%= simple_format(report['Attachments']) %></td>
         </tr>
       <% end %>
     </tbody>
@@ -196,15 +269,15 @@
     <tbody>
       <% @milestones_2.each do |report| %>
         <tr class="d-flex">
-          <td class="col-5"><%= simple_format(report[:outcome]) %></td>
+          <td class="col-5"><%= simple_format(report['Outcome']) %></td>
           <td class="col-1 text-center">
-            <%- if report[:status] %>
+            <%- if report['Status'] %>
               <%= image_tag "ok.png", size: "30x30" %>
             <% end -%>
           </td>
-          <td class="col-4"><%= simple_format(report[:evidence]) %></td>
-          <td class="col-1"><%= report[:date_achieved].strftime("%m/%d/%Y") if report[:date_achieved] %></td>
-          <td class="col-1"><%= simple_format(report[:attachments]) %></td>
+          <td class="col-4"><%= simple_format(report['Evidence']) %></td>
+          <td class="col-1"><%= report['Date Achieved'].to_date.strftime("%m/%d/%Y") if report['Date Achieved'] %></td>
+          <td class="col-1"><%= simple_format(report['Attachments']) %></td>
         </tr>
       <% end %>
     </tbody>
@@ -233,15 +306,15 @@
     <tbody>
       <% @milestones_3.each do |report| %>
         <tr class="d-flex">
-          <td class="col-5"><%= simple_format(report[:outcome]) %></td>
+          <td class="col-5"><%= simple_format(report['Outcome']) %></td>
           <td class="col-1 text-center">
-            <%- if report[:status] %>
+            <%- if report['Status'] %>
               <%= image_tag "ok.png", size: "30x30" %>
             <% end -%>
           </td>
-          <td class="col-4"><%= simple_format(report[:evidence]) %></td>
-          <td class="col-1"><%= report[:date_achieved].strftime("%m/%d/%Y") if report[:date_achieved] %></td>
-          <td class="col-1"><%= simple_format(report[:attachments]) %></td>
+          <td class="col-4"><%= simple_format(report['Evidence']) %></td>
+          <td class="col-1"><%= report['Date Achieved'].to_date.strftime("%m/%d/%Y") if report['Date Achieved'] %></td>
+          <td class="col-1"><%= simple_format(report['Attachments']) %></td>
         </tr>
       <% end %>
     </tbody>
@@ -252,7 +325,7 @@
 <br>
 <br>
 
-<%= link_to 'Export to PDF', results_path(format: :pdf), target: '_blank' %>
+
 
 
 
