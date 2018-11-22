@@ -6,11 +6,11 @@ namespace :reporting do
   end
 
   task update_occupancy: :environment do
-
-    total_companies = Company.total
-    result = Result.new("Month" => Date.today.strftime("%B %Y"), "Number of Paying Residents" => total_companies)
-    result.save
+    if Date.today.month != Date.today.next_day.month
+      total_companies = Company.total
+      result = Result.new("Month" => Date.today.strftime("%B %Y"), "Number of Paying Residents" => total_companies)
+      result.save
+    end
     puts "done"
-
   end
 end
