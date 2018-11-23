@@ -32,6 +32,9 @@ Rails.application.configure do
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
+  config.assets.precompile += ['application.scss', 'application2.css', 'scaffolds.scss', 'toolkit-light.css', 'application.js' 'application2.js', 'chart.js', 'cable.js', 'jquery.min.js', 'popper.min.js']
+
+
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
 
