@@ -39,6 +39,9 @@ gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'wkhtmltopdf-binary-edge'
 gem 'devise'
+gem 'pdfkit'
+gem 'render_anywhere', :require => false
+
 
 
 group :development, :test do
