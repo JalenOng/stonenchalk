@@ -7382,8 +7382,8 @@ textarea {
 
 @font-face {
   font-family: "toolkit-entypo";
-  src: url(asset_data_base64('toolkit-entypo.eot')),
-    url(asset_data_base64('toolkit-entypo.ttf')), url(asset_data_base64('toolkit-entypo.woff')), url(asset_data_base64('toolkit-entypo.woff2'));
+  src: font-path("toolkit-entypo.eot"),
+    font-path("toolkit-entypo.ttf"), font-path("toolkit-entypo.woff"), font-path("toolkit-entypo.woff2");
   font-weight: normal;
   font-style: normal; }
 
