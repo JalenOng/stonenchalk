@@ -14,7 +14,6 @@ class ResultsController < ApplicationController
     @milestones_2 = Report.milestone_2
     @milestones_3 = Report.milestone_3
 
-    byebug
     respond_to do |format|
       format.html
       format.pdf do
