@@ -16,7 +16,7 @@
       <div class="p-a">
         <span class="statcard-desc">Occupancy</span>
         <h2 class="statcard-number">
-          154
+          <%= @occupancy['Evidence'] %>
         </h2>
       </div>
       <canvas id="sparkline1" width="378" height="94" class="sparkline"
@@ -32,7 +32,7 @@
       <div class="p-a">
         <span class="statcard-desc">Events Run</span>
         <h2 class="statcard-number">
-          758
+          <%= @events['Evidence'] %>
         </h2>
       </div>
       <canvas id="sparkline1" width="378" height="94" class="sparkline"
@@ -48,7 +48,7 @@
       <div class="p-a">
         <span class="statcard-desc">Jobs Created</span>
         <h2 class="statcard-number">
-          1,293
+          <%= @jobs['Evidence'] %>
         </h2>
       </div>
       <canvas id="sparkline1" width="378" height="94" class="sparkline"
@@ -64,7 +64,7 @@
       <div class="p-a">
         <span class="statcard-desc">Amount Raised</span>
         <h2 class="statcard-number">
-          $7.5 million
+          $<%= @amount['Evidence'] %>
         </h2>
       </div>
       <canvas id="sparkline1" width="378" height="94" class="sparkline"
@@ -131,7 +131,7 @@
           </td>
           <td class="col-4"><%= simple_format(report['Evidence']) %></td>
           <td class="col-1"><%= report['Date Achieved'].to_date.strftime("%m/%d/%Y") if report['Date Achieved'] %></td>
-          <td class="col-1"><%= link_to "Attachment", report['Attachments'].first['url'], target: '_blank' if report['Attachments'] %></td>
+          <td class="col-1"><%= link_to "Download", report['Attachments'].first['url'], target: '_blank' if report['Attachments'] %></td>
         </tr>
       <% end %>
     </tbody>
@@ -168,7 +168,7 @@
           </td>
           <td class="col-4"><%= simple_format(report['Evidence']) %></td>
           <td class="col-1"><%= report['Date Achieved'].to_date.strftime("%m/%d/%Y") if report['Date Achieved'] %></td>
-          <td class="col-1"><%= link_to "Attachment", report['Attachments'].first['url'], target: '_blank' if report['Attachments'] %></td>
+          <td class="col-1"><%= link_to "Download", report['Attachments'].first['url'], target: '_blank' if report['Attachments'] %></td>
         </tr>
       <% end %>
     </tbody>
@@ -205,7 +205,7 @@
           </td>
           <td class="col-4"><%= simple_format(report['Evidence']) %></td>
           <td class="col-1"><%= report['Date Achieved'].to_date.strftime("%m/%d/%Y") if report['Date Achieved'] %></td>
-          <td class="col-1"><%= link_to "Attachment", report['Attachments'].first['url'], target: '_blank' if report['Attachments'] %></td>
+          <td class="col-1"><%= link_to "Download", report['Attachments'].first['url'], target: '_blank' if report['Attachments'] %></td>
         </tr>
       <% end %>
     </tbody>
@@ -216,7 +216,7 @@
 <br>
 <br>
 
-<h2>Milestones 1 - Due by 31st July 2018</h2>
+<h2>Milestones 1 - Due by 28th February 2018</h2>
 
 <div class="table-responsive">
   <table class="table table-hover" data-sort="table">
@@ -241,7 +241,7 @@
           </td>
           <td class="col-4"><%= simple_format(report['Evidence']) %></td>
           <td class="col-1"><%= report['Date Achieved'].to_date.strftime("%m/%d/%Y") if report['Date Achieved'] %></td>
-          <td class="col-1"><%= link_to "Attachment", report['Attachments'].first['url'], target: '_blank' if report['Attachments'] %></td>
+          <td class="col-1"><%= link_to "Download", report['Attachments'].first['url'], target: '_blank' if report['Attachments'] %></td>
         </tr>
       <% end %>
     </tbody>
@@ -278,7 +278,7 @@
           </td>
           <td class="col-4"><%= simple_format(report['Evidence']) %></td>
           <td class="col-1"><%= report['Date Achieved'].to_date.strftime("%m/%d/%Y") if report['Date Achieved'] %></td>
-          <td class="col-1"><%= link_to "Attachment", report['Attachments'].first['url'], target: '_blank' if report['Attachments'] %></td>
+          <td class="col-1"><%= link_to "Download", report['Attachments'].first['url'], target: '_blank' if report['Attachments'] %></td>
         </tr>
       <% end %>
     </tbody>
@@ -315,7 +315,7 @@
           </td>
           <td class="col-4"><%= simple_format(report['Evidence']) %></td>
           <td class="col-1"><%= report['Date Achieved'].to_date.strftime("%m/%d/%Y") if report['Date Achieved'] %></td>
-          <td class="col-1"><%= link_to "Attachment", report['Attachments'].first['url'], target: '_blank' if report['Attachments'] %></td>
+          <td class="col-1"><%= link_to "Download", report['Attachments'].first['url'], target: '_blank' if report['Attachments'] %></td>
         </tr>
       <% end %>
     </tbody>
