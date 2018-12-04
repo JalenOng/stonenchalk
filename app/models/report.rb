@@ -36,6 +36,22 @@ class Report < Airrecord::Table
   def self.milestone_3
     all(filter: '{Category} = "Milestone 3"')
   end
+
+  def self.jobs
+    all(filter: '{Category} = "Jobs"').first
+  end
+
+  def self.events
+    all(filter: '{Category} = "Events"').first
+  end
+
+  def self.amount
+    all(filter: '{Category} = "Amount"').first
+  end
+
+  def self.occupancy
+    all(filter: '{Category} = "Occupancy"').first
+  end
 end
 
 
