@@ -17,7 +17,7 @@ class ResultsController < ApplicationController
     @events = Report.events
     @amount = Report.amount
     @occupancy = Report.occupancy
-
+    
     respond_to do |format|
       format.html
       format.pdf do
