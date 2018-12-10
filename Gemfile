@@ -41,7 +41,7 @@ gem 'wkhtmltopdf-binary-edge'
 gem 'devise'
 gem 'pdfkit'
 gem 'render_anywhere', :require => false
-
+gem 'sendgrid-ruby'
 
 
 group :development, :test do
