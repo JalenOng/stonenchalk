@@ -20,7 +20,7 @@ namespace :reporting do
   task send_email: :environment do
 
     from = Email.new(email: 'grantreporting@stoneandchalk.com.au')
-    to = Email.new(email: 'jalen.ong@gmail.com')
+    to = Email.new(email: ENV['MAILTO'])
     subject = 'Stone & Chalk GSN Victorian Government Reporting'
     content = Content.new(type: 'text/html', value: '<p>Hi,</p><p>This is the latest update on <a href="https://melbreport.stoneandchalk.com.au">Stone & Chalk GSN Victorian Government Reporting.</a></p><p>Thank You</p>')
     
