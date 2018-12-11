@@ -28523,17 +28523,17 @@ fieldset:disabled a.btn {
 
 /* line 2211, /Users/jalenong/Documents/stonenchalk/app/assets/stylesheets/toolkit-light.scss */
 .btn-outline-primary {
-  color: #1997c6;
+  color: #000;
   background-color: transparent;
   background-image: none;
-  border-color: #1997c6;
+  border-color: #000;
 }
 
 /* line 2216, /Users/jalenong/Documents/stonenchalk/app/assets/stylesheets/toolkit-light.scss */
 .btn-outline-primary:hover {
   color: #fff;
-  background-color: #1997c6;
-  border-color: #1997c6;
+  background-color: #000;
+  border-color: #000;
 }
 
 /* line 2220, /Users/jalenong/Documents/stonenchalk/app/assets/stylesheets/toolkit-light.scss */
@@ -28543,7 +28543,7 @@ fieldset:disabled a.btn {
 
 /* line 2222, /Users/jalenong/Documents/stonenchalk/app/assets/stylesheets/toolkit-light.scss */
 .btn-outline-primary.disabled, .btn-outline-primary:disabled {
-  color: #1997c6;
+  color: #000;
   background-color: transparent;
 }
 
@@ -28551,8 +28551,8 @@ fieldset:disabled a.btn {
 .btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active,
 .show > .btn-outline-primary.dropdown-toggle {
   color: #fff;
-  background-color: #1997c6;
-  border-color: #1997c6;
+  background-color: #000;
+  border-color: #000;
 }
 
 /* line 2230, /Users/jalenong/Documents/stonenchalk/app/assets/stylesheets/toolkit-light.scss */
