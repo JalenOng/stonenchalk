@@ -11,7 +11,10 @@ namespace :reporting do
   task update_occupancy: :environment do
     if Date.today.month != Date.today.prev_day.month && Date.today == Date.today.beginning_of_quarter
       total_companies = Company.total
-      result = Result.new("Month" => Date.today.strftime("%B %Y"), "Number of Paying Residents" => total_companies)
+      quarters = [ "Jan - Mar", "Apr - June", "July - Sept", "Oct - Dec"]
+      quarter = ((Time.now.prev_day.month - 1) / 3) + 1
+
+      result = Result.new("Month" => "Quarter #{quarter} ( #{quarters[quarter - 1]} ) #{Date.today.prev_day.year}", "Number of Paying Residents" => total_companies)
       result.save
     end
     puts "done"
