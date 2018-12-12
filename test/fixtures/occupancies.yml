@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  month: MyString
+  number_of_paying_residents: 1
+  utilization: 1.5
+
+two:
+  month: MyString
+  number_of_paying_residents: 1
+  utilization: 1.5

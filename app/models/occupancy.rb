@@ -1,8 +1,8 @@
 Airrecord.api_key = ENV["AIRTABLE_API"]
 
-class Result < Airrecord::Table
+class Occupancy < Airrecord::Table
   self.base_key = "appX3h1ILJue9agrn"
-  self.table_name = "Occupancy Rates"
+  self.table_name = "Monthly Occupancy"
 
   def self.arrange_by_month
     all(view: "default")

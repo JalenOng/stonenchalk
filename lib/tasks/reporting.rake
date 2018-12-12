@@ -3,10 +3,6 @@ include SendGrid
 
 namespace :reporting do
   desc "TODO"
-  task kpi: :environment do
-    Result.email_update
-    puts "done"
-  end
 
   task update_occupancy: :environment do
     if Date.today.month != Date.today.prev_day.month && Date.today == Date.today.beginning_of_quarter
@@ -16,6 +12,16 @@ namespace :reporting do
 
       result = Result.new("Month" => "Quarter #{quarter} ( #{quarters[quarter - 1]} ) #{Date.today.prev_day.year}", "Number of Paying Residents" => total_companies)
       result.save
+    end
+    puts "done"
+  end
+
+  task update_monthly: :environment do
+    if Date.today.month != Date.today.prev_day.month
+      total_companies = Company.total
+
+      occupancy = Occupancy.new("Month" => Date.today.strftime("%B %Y"), "Number of Paying Residents" => total_companies)
+      occupancy.save
     end
     puts "done"
   end
