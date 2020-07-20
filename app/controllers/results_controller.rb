@@ -13,11 +13,12 @@ class ResultsController < ApplicationController
     @milestones_1 = Report.milestone_1
     @milestones_2 = Report.milestone_2
     @milestones_3 = Report.milestone_3
+    @milestones_4 = Report.milestone_4
     @jobs = Report.jobs
     @events = Report.events
     @amount = Report.amount
     @occupancy = Report.occupancy
-    
+
     respond_to do |format|
       format.html
       format.pdf do

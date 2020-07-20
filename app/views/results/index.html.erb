@@ -328,7 +328,41 @@
 <br>
 <br>
 
+<h2>Milestones 4 - Due by 31st July 2020</h2>
 
+<div class="table-responsive">
+  <table class="table table-hover" data-sort="table">
+    <thead>
+      <tr class="d-flex">
+        <th class="col-5">Outcome</th>
+        <th class="col-1 text-center">Status</th>
+        <th class="col-4">Evidence</th>
+        <th class="col-1">Date Achieved</th>
+        <th class="col-1">Attachment</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @milestones_4.each do |report| %>
+        <tr class="d-flex">
+          <td class="col-5"><%= simple_format(report['Outcome']) %></td>
+          <td class="col-1 text-center">
+            <%- if report['Status'] %>
+              <%= image_tag "ok.png", size: "30x30" %>
+            <% end -%>
+          </td>
+          <td class="col-4"><%= simple_format(report['Evidence']) %></td>
+          <td class="col-1"><%= report['Date Achieved'].to_date.strftime("%m/%d/%Y") if report['Date Achieved'] %></td>
+          <td class="col-1"><%= link_to "Download", report['Attachments'].first['url'], target: '_blank' if report['Attachments'] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<br>
+<br>
+<br>
+<br>
 
 
 
