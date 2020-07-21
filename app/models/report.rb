@@ -38,7 +38,7 @@ class Report < Airrecord::Table
   end
 
   def self.milestone_4
-    all(filter: '{Category} = "Milestone 4"')
+    all(view: "Grid view", filter: '{Category} = "Milestone 4"')
   end
 
   def self.jobs
