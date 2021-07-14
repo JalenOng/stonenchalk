@@ -41,6 +41,10 @@ class Report < Airrecord::Table
     all(view: "Grid view", filter: '{Category} = "Milestone 4"')
   end
 
+  def self.milestone_5
+    all(view: "Grid view", filter: '{Category} = "Milestone 5"')
+  end
+
   def self.jobs
     all(filter: '{Category} = "Jobs"').first
   end
