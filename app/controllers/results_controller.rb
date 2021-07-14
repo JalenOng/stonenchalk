@@ -14,6 +14,7 @@ class ResultsController < ApplicationController
     @milestones_2 = Report.milestone_2
     @milestones_3 = Report.milestone_3
     @milestones_4 = Report.milestone_4
+    @milestones_5 = Report.milestone_5
     @jobs = Report.jobs
     @events = Report.events
     @amount = Report.amount
