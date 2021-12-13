@@ -42,6 +42,7 @@ gem 'devise'
 gem 'pdfkit'
 gem 'render_anywhere', :require => false
 gem 'sendgrid-ruby'
+gem 'mini_racer'
 
 
 group :development, :test do
