@@ -14,10 +14,9 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
-  # Attempt to read encrypted secrets from `config/secrets.yml.enc`.
-  # Requires an encryption key in `ENV["RAILS_MASTER_KEY"]` or
-  # `config/secrets.yml.key`.
-  config.read_encrypted_secrets = true
+  # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
+  # or in config/master.key. This key is used to decrypt credentials (and other encrypted files).
+  # config.require_master_key = true
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
@@ -32,9 +31,6 @@ Rails.application.configure do
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
-  config.assets.precompile += ['application.scss', 'application2.css', 'scaffolds.scss', 'toolkit-light.scss', 'application.js' 'application2.js', 'chart.js', 'cable.js', 'jquery.min.js', 'popper.min.js', 'toolkit-entypo.eot', 'toolkit-entypo.ttf', 'toolkit-entypo.woff', 'toolkit-entypo.woff2' ]
-
-
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
 
@@ -42,13 +38,16 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
 
+  # Store uploaded files on the local file system (see config/storage.yml for options)
+  config.active_storage.service = :local
+
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
   # config.action_cable.url = 'wss://example.com/cable'
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  config.force_ssl = true
+  # config.force_ssl = true
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
@@ -63,6 +62,7 @@ Rails.application.configure do
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "stonenchalk_#{Rails.env}"
+
   config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.
